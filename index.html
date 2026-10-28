@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Encuesta de Opinión y Satisfacción (Anónima)</title>
+  <title>Encuesta de Satisfacción - Segunda Mesa Pública PAE</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -77,7 +77,6 @@
       line-height: 1.45;
     }
 
-    /* Tarjetas de preguntas */
     .question-block {
       background-color: #f8fafc;
       border: 1px solid #e2e8f0;
@@ -93,7 +92,6 @@
       margin-bottom: 14px;
     }
 
-    /* Grilla de Caritas */
     .scale-options {
       display: flex;
       justify-content: space-between;
@@ -150,7 +148,6 @@
       }
     }
 
-    /* Estado seleccionado */
     .scale-item input[type="radio"]:checked + label {
       border-color: var(--pae-green-btn);
       background-color: #ecfdf5;
@@ -209,16 +206,17 @@
 </head>
 <body>
 
+  <!-- Barra superior actualizada -->
   <div class="top-nav d-flex justify-content-between align-items-center">
-    <span>Encuesta de Satisfacción — AyAT</span>
+    <span>Encuesta de Satisfacción — Segunda Mesa Pública PAE</span>
     <span class="badge bg-light text-dark fw-bold">100% Anónimo</span>
   </div>
 
   <section class="hero-section">
     <div class="badge-anonimo">Participación Confidencial</div>
-    <h2 class="fw-bold mb-2">Encuesta de Opinión y Calidad</h2>
+    <h2 class="fw-bold mb-2">Encuesta de Satisfacción y Opinión</h2>
     <p class="small text-light opacity-75 max-w-600 mx-auto">
-      Marque con un toque la carita que represente su nivel de satisfacción para cada aspecto.[cite: 10]
+      Marque con un toque la carita que mejor represente su grado de satisfacción en cada aspecto evaluado.
     </p>
   </section>
 
@@ -228,14 +226,14 @@
         <div class="form-card" id="cardContenedor">
 
           <div class="callout-notice">
-            <strong>Escala de valores:</strong> 1 = Deficiente | 2 = Insuficiente | 3 = Aceptable | 4 = Sobresaliente | 5 = Excelente.[cite: 10]
+            <strong>Escala de valores:</strong> 1 = Deficiente | 2 = Insuficiente | 3 = Aceptable | 4 = Sobresaliente | 5 = Excelente.
           </div>
 
           <form id="formEncuesta">
 
             <!-- 1. Cumplimiento de objetivos -->
             <div class="question-block">
-              <div class="question-text">1. Cumplimiento de los objetivos programados *[cite: 10]</div>
+              <div class="question-text">1. Cumplimiento de los objetivos programados *</div>
               <div class="scale-options">
                 <div class="scale-item">
                   <input type="radio" id="p1_1" name="p1_objetivos" value="1" required>
@@ -262,7 +260,7 @@
 
             <!-- 2. Claridad y organización -->
             <div class="question-block">
-              <div class="question-text">2. Claridad y organización en el desarrollo de la asesoría *[cite: 10]</div>
+              <div class="question-text">2. Claridad y organización en el desarrollo de la actividad *</div>
               <div class="scale-options">
                 <div class="scale-item">
                   <input type="radio" id="p2_1" name="p2_claridad" value="1" required>
@@ -289,7 +287,7 @@
 
             <!-- 3. Pertinencia -->
             <div class="question-block">
-              <div class="question-text">3. Pertinencia de los temas tratados para el apoyo de la gestión *[cite: 10]</div>
+              <div class="question-text">3. Pertinencia de los temas tratados como apoyo a la gestión *</div>
               <div class="scale-options">
                 <div class="scale-item">
                   <input type="radio" id="p3_1" name="p3_pertinencia" value="1" required>
@@ -316,7 +314,7 @@
 
             <!-- 4. Materiales -->
             <div class="question-block">
-              <div class="question-text">4. Manejo apropiado de las ayudas y materiales utilizados *[cite: 10]</div>
+              <div class="question-text">4. Manejo apropiado de las ayudas y materiales utilizados *</div>
               <div class="scale-options">
                 <div class="scale-item">
                   <input type="radio" id="p4_1" name="p4_materiales" value="1" required>
@@ -343,7 +341,7 @@
 
             <!-- 5. Relación profesional -->
             <div class="question-block">
-              <div class="question-text">5. Relación profesional del asesor con los usuarios *[cite: 10]</div>
+              <div class="question-text">5. Trato, respeto y relación profesional con los asistentes *</div>
               <div class="scale-options">
                 <div class="scale-item">
                   <input type="radio" id="p5_1" name="p5_relacion" value="1" required>
@@ -370,7 +368,7 @@
 
             <!-- 6. Puntualidad -->
             <div class="question-block">
-              <div class="question-text">6. Puntualidad en los horarios establecidos *[cite: 10]</div>
+              <div class="question-text">6. Puntualidad con los horarios establecidos *</div>
               <div class="scale-options">
                 <div class="scale-item">
                   <input type="radio" id="p6_1" name="p6_puntualidad" value="1" required>
@@ -397,8 +395,8 @@
 
             <!-- Comentarios u observaciones -->
             <div class="mb-4">
-              <label for="recomendaciones" class="form-label-custom">Recomendaciones o comentarios (Opcional)[cite: 10]</label>
-              <textarea class="form-control" id="recomendaciones" name="recomendaciones" rows="3" placeholder="Escriba aquí sugerencias para mejorar el servicio..."></textarea>
+              <label for="recomendaciones" class="form-label-custom">Recomendaciones o comentarios (Opcional)</label>
+              <textarea class="form-control" id="recomendaciones" name="recomendaciones" rows="3" placeholder="Escriba aquí sus opiniones o sugerencias para el mejoramiento continuo..."></textarea>
             </div>
 
             <button type="submit" class="btn btn-submit-pae w-100" id="btnSubmit">
@@ -414,6 +412,7 @@
   </main>
 
   <script>
+    
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz-HNVWeR1jq9CIwSfhOt-gGLhcugOtP3J58BHKvvckmhtO2MMM9v4dsKLle2otgUjbkQ/exec";
 
     const form = document.getElementById('formEncuesta');
@@ -441,13 +440,13 @@
           body: JSON.stringify(payload)
         });
 
-        // Pantalla de agradecimiento directa en la misma vista
+        // Pantalla de agradecimiento sin recargas ni errores
         cardContenedor.innerHTML = `
           <div class="text-center py-5">
             <div class="check-circle">✓</div>
             <h3 class="fw-bold text-dark mb-2">¡Gracias por su calificación!</h3>
             <p class="text-secondary mb-4" style="max-width: 480px; margin: 0 auto 24px auto;">
-              Su respuesta anónima ha sido registrada exitosamente y servirá para seguir mejorando la calidad del servicio.[cite: 10]
+              Su respuesta anónima ha sido registrada exitosamente y servirá para el mejoramiento continuo de la mesa pública.
             </p>
             <button class="btn btn-submit-pae" onclick="window.location.reload()">
               Calificar nuevamente
