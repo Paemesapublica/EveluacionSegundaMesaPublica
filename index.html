@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FO-M4-P3-019 Encuesta de Opinión de Asesoría y Asistencia Técnica</title>
+  <title>Encuesta de Opinión y Satisfacción (Anónima)</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,11 +35,11 @@
     .hero-section {
       background: linear-gradient(180deg, #164835 0%, #1b5e43 100%);
       color: #ffffff;
-      padding: 44px 20px 90px 20px;
+      padding: 40px 20px 80px 20px;
       text-align: center;
     }
 
-    .badge-form {
+    .badge-anonimo {
       background-color: rgba(234, 179, 8, 0.2);
       border: 1px solid rgba(234, 179, 8, 0.5);
       color: #fef08a;
@@ -54,7 +54,7 @@
     }
 
     .form-container {
-      margin-top: -60px;
+      margin-top: -55px;
       margin-bottom: 60px;
     }
 
@@ -63,7 +63,7 @@
       border-radius: 18px;
       border: 1px solid #e2e8f0;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-      padding: 36px 32px;
+      padding: 36px 28px;
     }
 
     .callout-notice {
@@ -77,59 +77,31 @@
       line-height: 1.45;
     }
 
-    .section-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--pae-green);
-      border-bottom: 2px solid #e2e8f0;
-      padding-bottom: 6px;
-      margin-bottom: 18px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .form-label-custom {
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-      color: #475569;
-      margin-bottom: 5px;
-    }
-
-    .form-control-custom, .form-select-custom {
-      border: 1px solid #cbd5e1;
-      border-radius: 8px;
-      padding: 9px 12px;
-      font-size: 0.9rem;
-    }
-
-    /* Rating Cards con Caritas */
+    /* Tarjetas de preguntas */
     .question-block {
       background-color: #f8fafc;
       border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 18px 20px;
-      margin-bottom: 18px;
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 20px;
     }
 
     .question-text {
-      font-weight: 600;
-      font-size: 0.92rem;
+      font-weight: 700;
+      font-size: 0.95rem;
       color: #1e293b;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
+    /* Grilla de Caritas */
     .scale-options {
       display: flex;
       justify-content: space-between;
       gap: 8px;
-      flex-wrap: wrap;
     }
 
     .scale-item {
       flex: 1;
-      min-width: 65px;
       text-align: center;
     }
 
@@ -144,52 +116,80 @@
       justify-content: center;
       background: #ffffff;
       border: 2px solid #e2e8f0;
-      border-radius: 10px;
-      padding: 8px 4px;
+      border-radius: 12px;
+      padding: 10px 4px;
       cursor: pointer;
-      transition: all 0.15s ease-in-out;
+      transition: all 0.2s ease-in-out;
       user-select: none;
+      height: 100%;
     }
 
     .scale-item label .emoji {
-      font-size: 1.6rem;
-      margin-bottom: 2px;
+      font-size: 1.8rem;
+      margin-bottom: 4px;
+      filter: grayscale(40%);
+      transition: transform 0.15s ease;
     }
 
     .scale-item label .num {
-      font-weight: 700;
-      font-size: 0.85rem;
+      font-weight: 800;
+      font-size: 0.95rem;
       color: #475569;
     }
 
     .scale-item label .desc {
-      font-size: 0.68rem;
+      font-size: 0.65rem;
       color: #64748b;
+      font-weight: 600;
+      display: none;
     }
 
-    /* Estados al seleccionar */
+    @media (min-width: 576px) {
+      .scale-item label .desc {
+        display: block;
+      }
+    }
+
+    /* Estado seleccionado */
     .scale-item input[type="radio"]:checked + label {
       border-color: var(--pae-green-btn);
       background-color: #ecfdf5;
-      box-shadow: 0 0 0 2px rgba(31, 107, 69, 0.2);
+      box-shadow: 0 4px 12px rgba(31, 107, 69, 0.15);
+      transform: translateY(-2px);
     }
+
+    .scale-item input[type="radio"]:checked + label .emoji {
+      filter: grayscale(0%);
+      transform: scale(1.15);
+    }
+
     .scale-item input[type="radio"]:checked + label .num {
       color: var(--pae-green-btn);
+    }
+
+    .form-label-custom {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #475569;
+      margin-bottom: 6px;
     }
 
     .btn-submit-pae {
       background-color: var(--pae-green-btn);
       border: none;
       color: #ffffff;
-      font-weight: 600;
-      padding: 12px 28px;
-      border-radius: 8px;
-      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 13px 28px;
+      border-radius: 10px;
+      font-size: 1rem;
       transition: background-color 0.2s;
     }
 
     .btn-submit-pae:hover {
       background-color: var(--pae-green-hover);
+      color: #ffffff;
     }
 
     .check-circle {
@@ -210,64 +210,32 @@
 <body>
 
   <div class="top-nav d-flex justify-content-between align-items-center">
-    <span>PAE 2026 — Encuesta de Opinión y Satisfacción</span>
-    <span class="small opacity-75">FO-M4-P3-019</span>
+    <span>Encuesta de Satisfacción — AyAT</span>
+    <span class="badge bg-light text-dark fw-bold">100% Anónimo</span>
   </div>
 
   <section class="hero-section">
-    <div class="badge-form">Encuesta de Satisfacción</div>
-    <h2 class="fw-bold mb-2">Evaluación de Asesoría y Asistencia Técnica (AyAT)</h2>
+    <div class="badge-anonimo">Participación Confidencial</div>
+    <h2 class="fw-bold mb-2">Encuesta de Opinión y Calidad</h2>
     <p class="small text-light opacity-75 max-w-600 mx-auto">
-      Su opinión es vital para medir la conformidad e identificar aspectos para el mejoramiento continuo del servicio ofrecido.
+      Marque con un toque la carita que represente su nivel de satisfacción para cada aspecto.[cite: 10]
     </p>
   </section>
 
   <main class="container form-container">
     <div class="row justify-content-center">
-      <div class="col-12 col-lg-9">
+      <div class="col-12 col-lg-8">
         <div class="form-card" id="cardContenedor">
 
           <div class="callout-notice">
-            <strong>Escala de calificación:</strong> 1 = Deficiente 😠 | 2 = Insuficiente 🙁 | 3 = Aceptable 😐 | 4 = Sobresaliente 🙂 | 5 = Excelente 😀. Seleccione el valor que mejor describa su experiencia.
+            <strong>Escala de valores:</strong> 1 = Deficiente | 2 = Insuficiente | 3 = Aceptable | 4 = Sobresaliente | 5 = Excelente.[cite: 10]
           </div>
 
           <form id="formEncuesta">
 
-            <div class="section-title">1. Información del Evento / Asesoría</div>
-            <div class="row g-3 mb-4">
-              <div class="col-12">
-                <label class="form-label-custom">Nombre de la Actividad *</label>
-                <input type="text" class="form-control form-control-custom" name="actividad" placeholder="Ej: UN CAFÉ PAENAMORARTE CON DIRECTIVOS Y DOCENTES" required>
-              </div>
-
-              <div class="col-md-7">
-                <label class="form-label-custom">Nombre del Asesor *</label>
-                <input type="text" class="form-control form-control-custom" name="asesor" placeholder="Ej: DIEGO FLOREZ" required>
-              </div>
-              <div class="col-md-5">
-                <label class="form-label-custom">Contrato No. *</label>
-                <input type="text" class="form-control form-control-custom" name="contrato" placeholder="Ej: 26AS151F2587" required>
-              </div>
-
-              <div class="col-md-4">
-                <label class="form-label-custom">Municipio *</label>
-                <input type="text" class="form-control form-control-custom" name="municipio" placeholder="Ej: PUERTO NARE" required>
-              </div>
-              <div class="col-md-4">
-                <label class="form-label-custom">Subregión *</label>
-                <input type="text" class="form-control form-control-custom" name="subregion" placeholder="Ej: MAGDALENA MEDIO" required>
-              </div>
-              <div class="col-md-4">
-                <label class="form-label-custom">Lugar / Sede *</label>
-                <input type="text" class="form-control form-control-custom" name="lugar" placeholder="Ej: IER LA SIERRA" required>
-              </div>
-            </div>
-
-            <div class="section-title">2. Aspectos a Evaluar</div>
-
-            <!-- Pregunta 1 -->
+            <!-- 1. Cumplimiento de objetivos -->
             <div class="question-block">
-              <div class="question-text">1. Cumplimiento de los objetivos programados *</div>
+              <div class="question-text">1. Cumplimiento de los objetivos programados *[cite: 10]</div>
               <div class="scale-options">
                 <div class="scale-item">
                   <input type="radio" id="p1_1" name="p1_objetivos" value="1" required>
@@ -292,9 +260,9 @@
               </div>
             </div>
 
-            <!-- Pregunta 2 -->
+            <!-- 2. Claridad y organización -->
             <div class="question-block">
-              <div class="question-text">2. Claridad y organización del asesor en el desarrollo de la asesoría o asistencia técnica *</div>
+              <div class="question-text">2. Claridad y organización en el desarrollo de la asesoría *[cite: 10]</div>
               <div class="scale-options">
                 <div class="scale-item">
                   <input type="radio" id="p2_1" name="p2_claridad" value="1" required>
@@ -319,9 +287,9 @@
               </div>
             </div>
 
-            <!-- Pregunta 3 -->
+            <!-- 3. Pertinencia -->
             <div class="question-block">
-              <div class="question-text">3. Pertinencia de los temas asesorados, como apoyo para la gestión local *</div>
+              <div class="question-text">3. Pertinencia de los temas tratados para el apoyo de la gestión *[cite: 10]</div>
               <div class="scale-options">
                 <div class="scale-item">
                   <input type="radio" id="p3_1" name="p3_pertinencia" value="1" required>
@@ -346,9 +314,9 @@
               </div>
             </div>
 
-            <!-- Pregunta 4 -->
+            <!-- 4. Materiales -->
             <div class="question-block">
-              <div class="question-text">4. Manejo apropiado de las ayudas y materiales utilizados en el desarrollo de las actividades *</div>
+              <div class="question-text">4. Manejo apropiado de las ayudas y materiales utilizados *[cite: 10]</div>
               <div class="scale-options">
                 <div class="scale-item">
                   <input type="radio" id="p4_1" name="p4_materiales" value="1" required>
@@ -373,9 +341,9 @@
               </div>
             </div>
 
-            <!-- Pregunta 5 -->
+            <!-- 5. Relación profesional -->
             <div class="question-block">
-              <div class="question-text">5. Relación profesional del asesor con el usuario del servicio *</div>
+              <div class="question-text">5. Relación profesional del asesor con los usuarios *[cite: 10]</div>
               <div class="scale-options">
                 <div class="scale-item">
                   <input type="radio" id="p5_1" name="p5_relacion" value="1" required>
@@ -400,9 +368,9 @@
               </div>
             </div>
 
-            <!-- Pregunta 6 -->
+            <!-- 6. Puntualidad -->
             <div class="question-block">
-              <div class="question-text">6. Puntualidad del asesor con los horarios establecidos para la actividad *</div>
+              <div class="question-text">6. Puntualidad en los horarios establecidos *[cite: 10]</div>
               <div class="scale-options">
                 <div class="scale-item">
                   <input type="radio" id="p6_1" name="p6_puntualidad" value="1" required>
@@ -427,14 +395,14 @@
               </div>
             </div>
 
-            <!-- Recomendaciones -->
+            <!-- Comentarios u observaciones -->
             <div class="mb-4">
-              <label for="recomendaciones" class="form-label-custom">Recomendaciones o comentarios sobre la asesoría</label>
-              <textarea class="form-control form-control-custom" id="recomendaciones" name="recomendaciones" rows="3" placeholder="Su opinión servirá para la prestación de un mejor servicio..."></textarea>
+              <label for="recomendaciones" class="form-label-custom">Recomendaciones o comentarios (Opcional)[cite: 10]</label>
+              <textarea class="form-control" id="recomendaciones" name="recomendaciones" rows="3" placeholder="Escriba aquí sugerencias para mejorar el servicio..."></textarea>
             </div>
 
             <button type="submit" class="btn btn-submit-pae w-100" id="btnSubmit">
-              Enviar Evaluación
+              Enviar Calificación
             </button>
           </form>
 
@@ -445,12 +413,9 @@
     </div>
   </main>
 
-  <footer class="text-center py-3 text-muted small">
-    © 2026 Programa de Alimentación Escolar (PAE) — Sistema de Calidad FO-M4-P3-019.
-  </footer>
-
   <script>
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwo5iYD0lm6Ty5dbIsrdTo03bKbJmdcHEUGJEB11FZlteMrLhOz-YiSJhSfRkNZcmdSPg/exec";
+    // Coloca la URL de Apps Script de tu nueva hoja de Google Sheets
+    const SCRIPT_URL = "TU_URL_DE_APPS_SCRIPT_AQUI";
 
     const form = document.getElementById('formEncuesta');
     const btnSubmit = document.getElementById('btnSubmit');
@@ -461,7 +426,7 @@
       e.preventDefault();
 
       btnSubmit.disabled = true;
-      btnSubmit.innerText = "Guardando encuesta...";
+      btnSubmit.innerText = "Guardando respuesta...";
       alerta.classList.add('d-none');
 
       const formData = new FormData(form);
@@ -477,26 +442,26 @@
           body: JSON.stringify(payload)
         });
 
-        // Pantalla de agradecimiento sin redirección ni recarga de página
+        // Pantalla de agradecimiento directa en la misma vista
         cardContenedor.innerHTML = `
           <div class="text-center py-5">
             <div class="check-circle">✓</div>
-            <h3 class="fw-bold text-dark mb-2">¡Evaluación registrada con éxito!</h3>
-            <p class="text-secondary mb-4" style="max-width: 500px; margin: 0 auto 24px auto;">
-              Muchas gracias por diligenciar la encuesta de satisfacción. Su retroalimentación contribuye a la mejora continua del servicio de asesoría técnica del PAE.
+            <h3 class="fw-bold text-dark mb-2">¡Gracias por su calificación!</h3>
+            <p class="text-secondary mb-4" style="max-width: 480px; margin: 0 auto 24px auto;">
+              Su respuesta anónima ha sido registrada exitosamente y servirá para seguir mejorando la calidad del servicio.[cite: 10]
             </p>
             <button class="btn btn-submit-pae" onclick="window.location.reload()">
-              Registrar otra respuesta
+              Calificar nuevamente
             </button>
           </div>
         `;
 
       } catch (err) {
         alerta.className = "alert alert-danger mt-3";
-        alerta.textContent = "Hubo un error al procesar la encuesta. Por favor intente de nuevo.";
+        alerta.textContent = "Hubo un error al registrar la respuesta. Por favor intente nuevamente.";
         alerta.classList.remove('d-none');
         btnSubmit.disabled = false;
-        btnSubmit.innerText = "Enviar Evaluación";
+        btnSubmit.innerText = "Enviar Calificación";
       }
     });
   </script>
